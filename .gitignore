@@ -1,0 +1,19 @@
+# Dependências (são reinstaladas com npm install)
+node_modules/
+
+# Variáveis de ambiente: NUNCA enviar
+.env
+.env.*
+!.env.example
+
+# Logs e temporários
+*.log
+npm-debug.log*
+coverage/
+dist/
+build/
+
+# Arquivos do sistema e do editor
+.DS_Store
+Thumbs.db
+.vscode/
