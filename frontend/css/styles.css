@@ -1,0 +1,94 @@
+/* Paleta e fontes em variáveis: mudou aqui, muda no site todo */
+:root {
+  --grafite: #161514;
+  --creme: #f4efe6;
+  --vermelho: #c8372d;
+  --cinza: #6f6a63;
+  --linha: #d9d1c3;
+  --serif: 'DM Serif Display', Georgia, serif;
+  --sans: 'Inter', system-ui, sans-serif;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: var(--sans);
+  background: var(--creme);
+  color: var(--grafite);
+  line-height: 1.6;
+}
+
+a { color: inherit; }
+
+/* Cabeçalho */
+.topo {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.25rem 5vw;
+  border-bottom: 1px solid var(--linha);
+}
+.logo { font-family: var(--serif); font-size: 1.6rem; text-decoration: none; }
+.logo span { color: var(--vermelho); }
+.topo nav a { text-decoration: none; font-weight: 500; margin-left: 1.5rem; }
+.topo nav a:hover { color: var(--vermelho); }
+
+/* Destaque principal */
+.destaque { background: var(--grafite); color: var(--creme); padding: 5rem 5vw; }
+.chamada {
+  text-transform: uppercase;
+  letter-spacing: .15em;
+  font-size: .8rem;
+  font-weight: 600;
+  color: var(--vermelho);
+  margin-bottom: 1rem;
+}
+.destaque h1 {
+  font-family: var(--serif);
+  font-weight: 400;
+  font-size: clamp(2.5rem, 6vw, 4.5rem); /* cresce com a tela, com mínimo e máximo */
+  line-height: 1.05;
+  max-width: 14ch;
+}
+.descricao { max-width: 45ch; margin: 1.5rem 0 2rem; color: #cfc8bc; }
+.botao {
+  display: inline-block;
+  background: var(--vermelho);
+  color: #fff;
+  padding: .8rem 1.6rem;
+  text-decoration: none;
+  font-weight: 600;
+}
+.botao:hover { background: #a92b22; }
+
+/* Programação */
+.eventos { padding: 4rem 5vw; }
+.eventos h2 {
+  font-family: var(--serif);
+  font-weight: 400;
+  font-size: 2rem;
+  border-bottom: 2px solid var(--grafite);
+  padding-bottom: .5rem;
+  margin-bottom: 1.5rem;
+}
+.vazio { color: var(--cinza); }
+
+/* Rodapé */
+.rodape {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: .5rem;
+  padding: 2rem 5vw;
+  border-top: 1px solid var(--linha);
+  font-size: .85rem;
+  color: var(--cinza);
+}
+.status.ok { color: #2f7d4a; }
+.status.erro { color: var(--vermelho); }
+
+/* Celular */
+@media (max-width: 600px) {
+  .destaque { padding: 3.5rem 5vw; }
+  .topo nav a { margin-left: 1rem; }
+}
