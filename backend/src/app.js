@@ -3,10 +3,12 @@ const path = require('path');
 const pool = require('./db');
 const { rotaNaoEncontrada, tratarErros } = require('./middlewares/erros');
 const authRoutes = require('./routes/auth.routes');
+const cookieParser = require('cookie-parser');
 
 const app = express();
 
 app.use(express.json());
+app.use(cookieParser());
 
 // Rota de teste: confirma que a API e o banco estão funcionando
 app.get('/api/saude', async (req, res) => {
