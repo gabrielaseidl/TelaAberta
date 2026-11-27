@@ -2,6 +2,7 @@ const express = require('express');
 const path = require('path');
 const pool = require('./db');
 const { rotaNaoEncontrada, tratarErros } = require('./middlewares/erros');
+const authRoutes = require('./routes/auth.routes');
 
 const app = express();
 
@@ -25,6 +26,9 @@ app.get('/api/saude', async (req, res) => {
     });
   }
 });
+
+// Rotas de autenticação: tudo aqui começa com /api/auth
+app.use('/api/auth', authRoutes);
 
 // Frontend estático
 const pastaFrontend = path.join(__dirname, '..', '..', 'frontend');
